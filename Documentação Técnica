@@ -1,0 +1,108 @@
+# Página Web de Carros Esportivos
+------------------------------------------------------------------------------------------------------------------------------------------------
+## Descrição
+Este projeto é uma página web dedicada a carros esportivos, oferecendo uma galeria interativa, um formulário de contato e um mapa integrado. Desenvolvido com HTML, CSS e JavaScript, o site é projetado para proporcionar uma experiência visualmente atraente e funcional.
+------------------------------------------------------------------------------------------------------------------------------------------------
+## Tabela de Conteúdos
+- [Descrição](#descrição)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Instalação e Configuração](#instalação-e-configuração)
+- [Uso](#uso)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
+- [Contato e Suporte](#contato-e-suporte)
+
+## Tecnologias Utilizadas
+- **HTML5**: Estruturação da página.
+- **CSS3**: Estilização e design responsivo.
+- **JavaScript**: Funcionalidade interativa e manipulação do DOM.
+- **Google Maps API**: Incorporação de mapas interativos.
+- **Google Fonts**: Tipografia personalizada.
+
+## Instalação e Configuração
+
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/usuario/repo.git
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2-Acesse o diretório do projeto
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+cd nome-do-repositorio
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3-Abra o arquivo HTML no seu navegador
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Você pode abrir o index.html diretamente em um navegador de sua escolha para visualizar o projeto.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Uso:
+Navegue pela galeria de carros utilizando os botões de navegação.
+Utilize o formulário de contato para enviar mensagens e obter respostas.
+Explore o mapa para visualizar a localização da loja.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Estrutura do Projeto
+
+index.html: Arquivo principal HTML.
+styles.css: Folha de estilos CSS para a página.
+scripts.js: Arquivo JavaScript para interatividade.
+img/: Diretório contendo imagens usadas no projeto.
+README.md: Este arquivo de documentação.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Funcionalidades
+Galeria de Carros: Exibe informações e imagens de carros esportivos com navegação interativa.
+Formulário de Contato: Permite que os usuários enviem informações e mensagens.
+Mapa Interativo: Mostra a localização da loja usando o Google Maps.
+Navegação e Controle de Slides: Implementado com JavaScript para uma experiência de carrossel.
+------------------------------------------------------------------------------------------------------------------------------------------------
+Contribuição
+Se você deseja contribuir para este projeto, siga estas etapas:
+
+Faça um fork do repositório.
+Crie uma branch para suas modificações:
+bash
+Copiar código
+git checkout -b minha-branch
+Faça suas alterações e commit:
+bash
+Copiar código
+git commit -am 'Adiciona nova funcionalidade'
+Faça push para sua branch:
+bash
+Copiar código
+git push origin minha-branch
+Abra um Pull Request.
+Certifique-se de seguir as melhores práticas de codificação e teste suas alterações.
+
+Licença
+Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
+
+Contato e Suporte
+Se você tiver perguntas ou precisar de suporte adicional, entre em contato com:
+
+Autor: Camila Dziubat
+Email: goncalvesscamilla07@gmail.com
+LinkedIn: https://www.linkedin.com/in/camila-dziubat
+
+perl
+Copiar código
+
+### Observações
+- Substitua `https://github.com/usuario/repo.git` pelo URL real do seu repositório no GitHub.
+- Ajuste `nome-do-repositorio` para o nome correto do diretório do seu projeto.
+- Certifique-se de que o link para o arquivo de licença (`[LICENSE](LICENSE)`) esteja correto e que você tenha um arquivo de licença correspondente no seu repositório.
+
+Este modelo fornece uma visão clara e estruturada do seu projeto, facilitando a compreensão e colaboração de outros desenvolvedores.
+
+
