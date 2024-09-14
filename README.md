@@ -1,4 +1,9 @@
 # Carros Esportivos - Projeto Web
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE). Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+
 Bem-vindo ao repositório do projeto Carros Esportivos! Este projeto é uma página web desenvolvida para apresentar uma lista de carros esportivos, incluindo informações detalhadas sobre cada veículo, localização em um mapa interativo e opções de contato. Abaixo, você encontrará uma descrição detalhada das páginas e funcionalidades da aplicação.
 
 Página Inicial
