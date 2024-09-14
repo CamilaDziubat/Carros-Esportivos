@@ -1,0 +1,567 @@
+/* Estilos Globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+  
+}
+html {
+  scroll-behavior: smooth; /* Habilita rolagem suave para toda a página */
+}
+
+body {
+  background-image: linear-gradient(
+    135deg,
+    #1c1c1c,
+    #484848,
+    #a1a1a1,
+    #484848,
+    #111111
+  );
+  color: white;
+  font-size: 16px;
+  height: 100vh; /* Ajustado para 100vh */
+  overflow-x: hidden; /* Escondendo o overflow horizontal */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Espaça a imagem e a navegação */
+  align-items: center; /* Alinha todos os itens verticalmente no centro */
+  padding: 10px 20px; /* Ajusta o padding conforme necessário */
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 165, 0, 0.5);
+  z-index: 2;
+}
+
+
+header img {
+  width: 180px;
+}
+
+header nav ul {
+  display: flex;
+  gap: 10%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  justify-content: center; /* Centraliza o conteúdo */
+  list-style: none;
+}
+
+nav ul {
+  display: flex;
+  gap: 10%;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 50px; /* Espaçamento entre os itens do menu */
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.menu-item {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.menu-item:hover {
+  color: #000;
+  background-color: #d4af37;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  header {
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding: 10px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .menu-item {
+    display: block;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  header img {
+    width: 200px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu-item {
+    padding: 10px;
+  }
+}
+
+
+.contact-container {
+  background-color: #484848;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+ 
+}
+
+.contact-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #d4af37;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #333;
+  color: white;
+}
+
+button[type="submit"] {
+  background-color: #d4af37;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  transition: background-color 0.1s ease, transform 0.1s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #b38b29;
+  transform: scale(1.05);
+}
+
+#confirmation-message {
+  margin-top: 20px;
+  text-align: center;
+  color: #d4af37;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Estilos para o modal */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(48, 48, 47, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #333;
+  padding: 50px 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  color: white;
+  box-shadow: 0 10px 20px rgba(255, 250, 250, 0.5);
+  position: relative;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#contact-form label {
+  font-weight: bold;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #333;
+  color: white;
+  box-sizing: border-box;
+}
+
+.close-button {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilo para o botão do WhatsApp */
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  background-color: #25D366; /* Cor padrão do WhatsApp */
+  border-radius: 50px; /* Mais arredondado */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.whatsapp-button img {
+  width: 24px; /* Ajuste o tamanho do ícone do WhatsApp */
+  margin-right: 8px;
+}
+
+.whatsapp-button:hover {
+  background-color: #128C7E; /* Cor escura quando o botão é hover */
+  transform: scale(1.05);
+}
+
+.whatsapp-button:active {
+  transform: scale(0.95);
+}
+
+section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden; /* Esconde overflow dentro da seção */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+section .list {
+  width: 90vw;
+  margin: auto;
+  height: 100%;
+  position: relative;
+}
+
+section .list .item {
+  position: absolute;
+  inset: 0;
+  transform: translateX(100vw);
+  transition: 0.5s;
+  opacity: 0;
+}
+
+section .list .item.active {
+  transform: translateX(0);
+  transition: 0.4s;
+  opacity: 1;
+}
+
+section .list .item .car-img {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
+  width: 50%;
+}
+
+section .list .item .car-img img {
+  transform: rotate(-30deg);
+  transition: transform 0.4s ease;
+}
+
+section .list .item.active .car-img img {
+  transform: rotate(-20deg);
+}
+
+section .list .item .contente {
+  position: absolute;
+  right: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  gap: 20px;
+}
+
+section .list .item .contente .car-information,
+section .list .item .contente h2,
+section .list .item .contente .description,
+section .list .item .contente .information {
+  transform: translateX(200px);
+  transition: 0.6s;
+  transition-delay: 0.1s;
+  opacity: 0;
+}
+
+section .list .item.active .contente .car-information,
+section .list .item.active .contente h2,
+section .list .item.active .contente .description,
+section .list .item.active .contente .information {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+section .list .item .contente h2 {
+  font-size: 5.0em;
+  line-height: 1em;
+  transition-delay: 0.5s;
+}
+
+section .list .item .contente .description {
+  color: #ffffff;
+  font-size: 14px;
+  text-align: right;
+  max-width: 400px;
+  transition-delay: 0.7s;
+}
+
+section .list .item .contente .information {
+  border-radius: 30px;
+  height: 35px;
+  width: 120px;
+  text-transform: uppercase;
+  border: 2px solid #d4af37;
+  background-color: #484848;
+  color: #d4af37;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "League Gothic", sans-serif;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition-delay: 0.1s;
+}
+
+section .list .item .contente .information:hover {
+  transform: scale(1.1);
+  background-color: #111111;
+}
+
+section .list .item::before {
+  content: '';
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  top: 50%;
+  border-top: 1px solid #fff;
+}
+
+.arrows {
+  width: 90vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -25px);
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrows button {
+  top: 60%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.arrows button img {
+  width: 30px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.arrows button:hover {
+  transform: scale(1.1);
+  background-color: #1c1c1c;
+}
+
+.arrows button:nth-child(1) img {
+  transform: scale(-1);
+}
+#second-section {
+  background-color: #1c1c1c;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.indicators {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 200px;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 15px;
+}
+
+.indicators .number {
+  font-size: 3em;
+  font-family: "League Gothic", sans-serif;
+}
+
+.indicators ul {
+  display: flex;
+  gap: 10px;
+}
+
+
+.indicators ul li {
+  width: 50px;
+  height: 5px;
+  background-color: #484848;
+  border-radius: 5px;
+  transition: background-color 0.5s;
+}
+
+.indicators ul li.active {
+  background-color: aliceblue;
+}
+
+
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem; /* Tamanho de fonte menor em telas pequenas */
+    margin-bottom: 1.5rem; /* Menos espaço abaixo do título */
+  }
+
+  .mapa {
+    height: 300px; /* Altura menor em telas pequenas */
+  }
+}
+/* Estilo do Título */
+.title {
+  font-size: 2.5rem;
+  color: #d4af37; /* Cor dourada */
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 2rem; /* Espaçamento abaixo do título */
+  font-weight: bold; /* Peso do texto para maior impacto */
+  margin-top: 7rem;
+}
+
+/* Estilo do Contêiner do Endereço */
+.address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem auto; /* Margens superior e inferior para espaçamento */
+  padding: 0 1rem; /* Espaçamento lateral para evitar que o conteúdo encoste nas bordas da tela */
+  max-width: 90%; /* Limita a largura do contêiner para 90% do body */
+  box-sizing: border-box; /* Inclui padding e border na largura total */
+  background-color: #1d1c1c; /* Fundo escuro para evitar cor do body aparecendo */
+}
+
+/* Estilo do Mapa */
+.mapa {
+  width: 100%; /* Largura total do contêiner .address */
+  max-width: 1200px; /* Limita a largura máxima do mapa */
+  height: 400px; /* Altura ajustada para boa visualização */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+  overflow: hidden; /* Garante que o conteúdo não ultrapasse as bordas */
+}
+
+/* Estilo do Footer */
+footer {
+  background-color: #000000; /* Cor de fundo do footer */
+  color: #fce304; /* Cor do texto do footer */
+  text-align: center;
+  padding: 1rem;
+  position: relative; /* Garante que o footer não seja afetado pelo tamanho do mapa */
+  margin-top: 2rem; /* Espaçamento acima do footer */
+  clear: both; /* Garante que o footer esteja após outros elementos flutuantes */
+}
+
+/* Garantir que o footer esteja sempre na parte inferior da página */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0; /* Remove a margem padrão do body */
+}
+
+main {
+  flex: 1; /* Faz com que o main ocupe o espaço restante disponível */
+}
+.share img {
+  margin: 1.7rem;
+  cursor: pointer;
+  border-radius: 70%;
+  padding: 0.10em;
+}
+
+ .share img:hover {
+  background: floralwhite;
+}
+
+
+
+
+
+
+
