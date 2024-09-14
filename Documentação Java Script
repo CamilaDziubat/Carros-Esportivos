@@ -1,0 +1,193 @@
+## Documetação  do JAVASCRIPT
+
+Relatório Descritivo: Análise do Código JavaScript
+O código JavaScript fornecido adiciona funcionalidades interativas à página HTML. Ele controla um slider de imagens, gerencia a exibição e fechamento de um modal de contato, valida os dados do formulário de contato e inicializa um mapa do Google. Vamos detalhar cada parte do código:
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+          ##1. Controle do Slider de Imagens
+------------------------------------------------------------------------------------------------------------------------------------------------
+> Objetivo: Permitir a navegação entre diferentes imagens no slider. 
+
+Funcionalidades:
+
+Seletores: Captura elementos do DOM para navegação e controle do slider:
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+const container = document.querySelector('.container');
+const items = container.querySelectorAll('.list .item');
+const indicator = document.querySelector('.indicators');
+const dots = indicator.querySelectorAll('ul li');
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Atualização do Indicador: Atualiza a exibição dos indicadores (números e pontos) para refletir o item ativo:
+function updateIndicator() {
+    const numberElement = indicator.querySelector('.number');
+    if (numberElement) {
+        numberElement.textContent = `0${active + 1}`;
+    }
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === active);
+    });
+}
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Atualização do Slider: Altera a visibilidade dos itens do slider e atualiza o indicador:
+function updateSlider() {
+    items.forEach(item => item.classList.remove('active'));
+    if (items[active]) {
+        items[active].classList.add('active');
+    }
+    updateIndicator();
+}
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Navegação: Manipula os botões de navegação para alterar o item ativo:
+prevButton.onclick = () => {
+    active = (active - 1 < firstPosition) ? lastPosition : active - 1;
+    updateSlider();
+};
+
+nextButton.onclick = () => {
+    active = (active + 1 > lastPosition) ? firstPosition : active + 1;
+    updateSlider();
+};
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Inicialização: Configura o slider quando a página é carregada:
+updateSlider();
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+                     ## 2. Gerenciamento do Modal de Contato
+------------------------------------------------------------------------------------------------------------------------------------------------
+>Objetivo: Controlar a exibição e fechamento do modal de contato
+
+Funcionalidades:
+
+Seletores: Captura elementos do DOM relacionados ao modal e ao formulário:
+const contactModal = document.getElementById('contact-modal');
+const contactForm = document.getElementById('contact-form');
+const confirmationMessage = document.getElementById('confirmation-message');
+const closeButton = document.querySelector('.close-button');
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Fechar o Modal: Função para esconder o modal e a mensagem de confirmação:
+
+function closeModal() {
+    if (contactModal) {
+        contactModal.style.display = 'none';
+    }
+    if (confirmationMessage) {
+        confirmationMessage.classList.add('hidden');
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Abrir o Modal: Exibe o modal ao clicar no item "Fale Conosco":
+
+document.querySelector('.menu-item:nth-child(3)').onclick = () => {
+    if (contactModal) {
+        contactModal.style.display = 'flex';
+    }
+};
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Fechar o Modal com o Botão ou Clique Fora: Fechar o modal ao clicar no botão de fechar ou fora do conteúdo:
+
+if (closeButton) {
+    closeButton.onclick = closeModal;
+}
+window.onclick = (event) => {
+    if (contactModal && event.target === contactModal) {
+        closeModal();
+    }
+};
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+                            ##3. Validação e Envio do Formulário de Contato
+------------------------------------------------------------------------------------------------------------------------------------------------
+> Objetivo: Validar os dados do formulário e exibir uma mensagem de confirmação.
+
+Funcionalidades:
+
+Validações: Verifica se os dados inseridos no formulário atendem aos critérios específicos:
+
+contactForm.onsubmit = function(event) {
+    event.preventDefault(); // Impede o envio padrão do formulário
+
+    const name = document.getElementById("name").value.trim();
+    const contact = document.getElementById("contact").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (name.length === 0 || name.length > 50) {
+        alert("O nome deve ter no máximo 50 caracteres.");
+        return;
+    }
+
+    const phonePattern = /^[0-9]{10,15}$/;
+    if (!phonePattern.test(contact)) {
+        alert("Por favor, insira um número de telefone válido (10 a 15 dígitos).");
+        return;
+    }
+
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+        alert("Por favor, insira um e-mail válido.");
+        return;
+    }
+
+    if (message.length === 0 || message.length > 300) {
+        alert("A mensagem deve ter no máximo 300 caracteres.");
+        return;
+    }
+
+    confirmationMessage.classList.remove("hidden");
+    contactForm.reset();
+
+    setTimeout(() => {
+        confirmationMessage.classList.add("hidden");
+    }, 3000);
+};
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+                          ##4. Inicialização do Google Maps
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+> Objetivo: Exibir um mapa do Google Maps na página.
+
+Funcionalidades:
+
+Inicializar o Mapa: Configura o mapa do Google Maps com um marcador na localização especificada:
+
+function initMap() {
+    const location = { lat: -23.5505, lng: -46.6333 }; // Substitua pelas coordenadas da sua loja
+
+    const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: location
+    });
+
+    new google.maps.Marker({
+        position: location,
+        map: map,
+        title: 'Localização da Loja'
+    });
+}
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+##Conclusão
+O código JavaScript adicionado à página HTML implementa funcionalidades interativas cruciais:
+
+Controle do Slider: Permite navegação entre imagens e atualização de indicadores.
+Gerenciamento do Modal: Controla a exibição do modal de contato e valida os dados do formulário.
+Validação de Dados do Formulário: Garante que os dados enviados sejam válidos e exibe uma mensagem de confirmação.
+Inicialização do Mapa: Adiciona um mapa interativo com a localização desejada.
+Essas funcionalidades melhoram a experiência do usuário, proporcionando uma navegação fluida, interatividade, e um meio eficiente de contato.
+
+
