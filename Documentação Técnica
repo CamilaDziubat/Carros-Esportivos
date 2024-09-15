@@ -66,7 +66,39 @@ Formulário de Contato: Permite que os usuários enviem informações e mensagen
 Mapa Interativo: Mostra a localização da loja usando o Google Maps.
 Navegação e Controle de Slides: Implementado com JavaScript para uma experiência de carrossel.
 ------------------------------------------------------------------------------------------------------------------------------------------------
+Uso e Exemplos
+Ao abrir o projeto, você verá uma galeria de carros esportivos com navegação por slides e opções de contato. Utilize os botões de navegação para visualizar diferentes carros e o formulário de contato para enviar mensagens.
+
+Arquitetura do Sistema
+O projeto é dividido em três principais componentes:
+
+Front-End: HTML, CSS, e JavaScript para a interface do usuário.
+Google Maps API: Para a funcionalidade de mapa interativo.
+Google Fonts: Para fontes personalizadas.
+------------------------------------------------------------------------------------------------------------------------------------------------
+Testes
+Não foram implementados testes automatizados neste projeto. A funcionalidade foi verificada manualmente.
+------------------------------------------------------------------------------------------------------------------------------------------------
+Fork o repositório.
+Crie uma branch para sua feature ou bugfix.
+Envie um pull request com uma descrição clara das mudanças.
+Problemas Conhecidos e Limitações
+O projeto não possui testes automatizados.
+O mapa é exibido com uma localização fixa; a integração dinâmica com outras APIs ainda não foi implementada.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Licença
+Este projeto está licenciado sob a MIT License.
+------------------------------------------------------------------------------------------------------------------------------------------------
+Roadmap
+Implementar testes automatizados
+Adicionar suporte a múltiplas localizações no mapa
+Melhorar a responsividade para dispositivos móveis
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
 Contribuição
+Sinta-se à vontade para contribuir com o projeto! Para contribuir:
 Se você deseja contribuir para este projeto, siga estas etapas:
 
 Faça um fork do repositório.
@@ -84,7 +116,7 @@ Copiar código
 git push origin minha-branch
 Abra um Pull Request.
 Certifique-se de seguir as melhores práticas de codificação e teste suas alterações.
-
+------------------------------------------------------------------------------------------------------------------------------------------------
 Licença
 Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
 
@@ -95,8 +127,7 @@ Autor: Camila Dziubat
 Email: goncalvesscamilla07@gmail.com
 LinkedIn: https://www.linkedin.com/in/camila-dziubat
 
-perl
-Copiar código
+
 
 ### Observações
 - Substitua `https://github.com/usuario/repo.git` pelo URL real do seu repositório no GitHub.
